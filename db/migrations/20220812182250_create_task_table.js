@@ -13,9 +13,7 @@ exports.up = function(knex) {
         table
             .string("title")
         table
-            .time("begin_at")
-        table
-            .time("end_at")
+            .integer("seconds")
     });
 };
 

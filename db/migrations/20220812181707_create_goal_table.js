@@ -14,8 +14,6 @@ exports.up = function (knex) {
             .string("title", 64)
             .notNullable()
             .index();
-        table.time("created_at");
-        table.time("updated_at");
     });
 };
 
