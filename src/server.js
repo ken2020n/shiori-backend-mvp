@@ -23,8 +23,8 @@ const setupServer = () => {
         } else {
             next()
         }
-    }
-    app.use(allowCrossDomain)
+    };
+    app.use(allowCrossDomain);
 
     app.use(express.json());
 
