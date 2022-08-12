@@ -3,6 +3,7 @@ const knex = require("./knex");
 
 const userController = require("./controllers/user.controller");
 const goalController = require("./controllers/goal.controller");
+const taskController = require("./controllers/task.controller");
 
 const setupServer = () => {
     const app = express();
@@ -34,6 +35,10 @@ const setupServer = () => {
     // goal
     app.post("/goal/create", goalController.create);
     app.get("/goals/:userId", goalController.getGoalsByUserId);
+
+    // task
+    app.post("/task/create", taskController.create);
+    app.get("/tasks/:goalId", taskController.getTasksByGoalId);
 
     return app;
 };
