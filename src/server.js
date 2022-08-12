@@ -1,6 +1,8 @@
 const express = require("express");
 const knex = require("./knex");
 
+const userController = require("./controllers/user.controller");
+
 const setupServer = () => {
     const app = express();
     app.use(express.json());
@@ -23,6 +25,10 @@ const setupServer = () => {
             });
         }
     });
+
+    // user
+    app.post("/user/register", userController.register);
+    app.post("/user/login", userController.login);
 
     return app;
 };
