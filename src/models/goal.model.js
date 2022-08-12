@@ -12,7 +12,6 @@ const getGoalsByUserId = async (userId) => {
         .select({
             id: "id",
             title: "title",
-            created_at: "created_at",
         })
         .from("goal")
         .where({user_id: userId});
