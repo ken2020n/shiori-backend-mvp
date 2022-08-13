@@ -39,6 +39,7 @@ const setupServer = () => {
     // goal
     app.post("/goal/create", goalController.create);
     app.get("/goals/:userId", goalController.getGoalsByUserId);
+    app.delete("/goal/delete/:id", goalController.deleteGoal);
 
     // task
     app.post("/task/create", taskController.create);

@@ -17,7 +17,14 @@ const getGoalsByUserId = async (userId) => {
         .where({user_id: userId});
 }
 
+const deleteGoal = async (id) => {
+    return knex("goal")
+        .del()
+        .where({ id: id });
+}
+
 module.exports = {
     create,
     getGoalsByUserId,
+    deleteGoal
 };

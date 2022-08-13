@@ -18,7 +18,12 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
     const user = req.body;
-    const result = await userModel.login(user);
+    let result;
+    try {
+        result = await userModel.login(user);
+    } catch (err) {
+        console.error(err);
+    }
     if(result === undefined) {
         res.sendStatus(401);
     } else {
