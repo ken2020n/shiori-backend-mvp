@@ -4,7 +4,7 @@ require("dotenv").config();
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 module.exports = {
-    client: "postgresql",
+    client: "pg",
     connection: process.env.DATABASE_URL || {
         host: process.env.DB_HOST || "127.0.0.1",
         port: process.env.DB_PORT || 5432,
@@ -13,6 +13,7 @@ module.exports = {
         password: process.env.DB_PASSWORD,
     },
     migrations: {
+        tableName: "knex_migrations",
         directory: "./db/migrations",
     },
     seeds: {
